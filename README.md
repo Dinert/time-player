@@ -47,6 +47,17 @@ npm i @dienrt/time-player --save
 yarn add @dinert/time-player
 ```
 
+## 如何使用
+```js
+  import DTimePlayer from '@dinert/time-player'
+  <d-time-player></d-time-player>
+  export default {
+    components: {
+      DTimePlayer
+    }
+  }
+```
+
 ## 属性
 | 参数          | 说明              | 类型   | 可选值 | 默认值              |
 | ------------- | ----------------- | ------ | ------ | ------------------- |
