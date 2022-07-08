@@ -187,6 +187,11 @@ export default {
       !event && this.isPlay && this.addTime(this.currentTempTime);
       width = width || this.getWidth();
 
+      // 判断超出距离设置为100
+      if(width > 100) {
+        width = 100
+      }
+
       this.bar.style.width = width + "%";
       this.tooltip.style.left = width + "%";
 
