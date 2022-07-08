@@ -1,9 +1,11 @@
 # 自适应时间轴播放器
-![image](/src/assets/%E5%8A%A8%E7%94%BB.gif)
+
 ## 前言
 * 这是一个从0到1实现的时间轴播放器，除了时间格式化用了第三库dayjs以外，其它的都是使用纯源生的js实现的，兼容性IE8吧，这里小小的夸一下
 * 非常轻量，包的大小在100kb以内，压缩前后都是
 * 从刚开始的琢磨不透，到最后的云淡风轻，可算把这个时间轴播放器给完成了
+## 效果
+![image](/src/assets/gif/time-player.gif)
 ## 技术栈
 <a href="https://github.com/vuejs/vue/tree/v2.6.14">
   <img src="https://img.shields.io/badge/vue-2.16.4-brightgreen" alt="vue">
