@@ -236,6 +236,7 @@ export default {
     timeClick(event) {
       this.config = this.getConfig(event);
 
+      // 判断结束时间是否大于当前时间，如果大于就停止播放
       if(dayjs(this.stopTime).startOf('hours').valueOf() <= dayjs(this.config.time).valueOf()) {
         return 
       }
@@ -277,6 +278,7 @@ export default {
     // 播放
     timePlay() {
 
+      // 判断结束时间是否大于当前时间，如果大于就停止播放
       if(dayjs(this.stopTime).startOf('hours').valueOf() <= dayjs(this.currentTempTime).valueOf()) {
         return 
       }
