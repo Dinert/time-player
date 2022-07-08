@@ -101,7 +101,7 @@ export default {
     stopTime: {
       type: Date,
       default: () => {
-        return new Date(dayjs().toDate());
+        return new Date(dayjs().add(2, "day").startOf("day"));
       },
     },
     // 底部时间格式化
@@ -189,9 +189,16 @@ export default {
 
       this.bar.style.width = width + "%";
       this.tooltip.style.left = width + "%";
+
+      // 判断结束时间是否大于当前时间，如果大于就停止播放
+      if(dayjs(this.stopTime).startOf('hours').valueOf() <= dayjs(this.currentTempTime).valueOf()) {
+        this.isPlay = false
+      }
       if (this.isPlay) {
         this.timeTimeout && clearTimeout(this.timeTimeout);
         this.timeTimeout = setTimeout(this.autoMove, this.delay);
+      }else {
+        this.timeTimeout && clearTimeout(this.timeTimeout);
       }
     },
     getWidth() {
@@ -228,7 +235,13 @@ export default {
     // 时间轴点击
     timeClick(event) {
       this.config = this.getConfig(event);
+
+      if(dayjs(this.stopTime).startOf('hours').valueOf() <= dayjs(this.config.time).valueOf()) {
+        return 
+      }
+
       this.changeTime(this.config.time);
+
       this.autoMove(this.config.percent, event);
       this.$emit("animate-before", this.config);
     },
@@ -257,14 +270,17 @@ export default {
       this.hoverTime = config.time;
       this.isTempTooltip = true;
     },
-
+    // 鼠标移出
     timeMouseLeave() {
-      // 鼠标移出
       this.isTempTooltip = false;
     },
-
+    // 播放
     timePlay() {
-      // 播放
+
+      if(dayjs(this.stopTime).startOf('hours').valueOf() <= dayjs(this.currentTempTime).valueOf()) {
+        return 
+      }
+
       this.isPlay = !this.isPlay;
       if (this.isPlay) {
         this.timeTimeout && clearTimeout(this.timeTimeout);
