@@ -280,9 +280,9 @@ export default {
     timeMouseLeave() {
       this.isTempTooltip = false;
     },
+
     // 播放
     timePlay() {
-
       // 判断结束时间是否大于当前时间，如果大于就停止播放
       if(dayjs(this.stopTime).startOf('hours').valueOf() <= dayjs(this.currentTempTime).valueOf()) {
         return 
@@ -295,6 +295,19 @@ export default {
       } else {
         clearTimeout(this.timeTimeout);
       }
+    },
+
+    // 开始播放
+    startPlay() {
+      this.isPlay = true;
+      this.timeTimeout && clearTimeout(this.timeTimeout);
+      this.timeTimeout = setTimeout(this.autoMove, this.delay);
+    },
+
+    // 停止播放
+    stopPlay() {
+      this.isPlay = false;
+      this.timeTimeout && clearTimeout(this.timeTimeout);
     },
 
     // 回到当前
