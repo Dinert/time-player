@@ -1,0 +1,210 @@
+ul li{
+  list-style: none;
+}
+.dTimePlayer {
+height: 50px;
+width: 90%;
+display: flex;
+background-color: rgba(0, 0, 0, 0.7);
+border-radius: 3px;
+user-select: none;
+&-left {
+  width: 48px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  &-t {
+    height: 8px;
+    background-color: #409EFF;
+    position: relative;
+  }
+  &-b {
+    flex: 1;
+    position: relative;
+    &-start {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border: 6px solid;
+      border-color: #fff #fff transparent transparent;
+      transform: rotate(45deg);
+      margin-left: -9px;
+      margin-top: -6px;
+      cursor: pointer;
+    }
+    &-start.stop {
+      width: 16px;
+      height: 12px;
+      border: none;
+      transform: rotate(0deg);
+      cursor: pointer;
+    }
+    &-start.stop::before {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 12px;
+      background-color: #fff;
+    }
+    &-start.stop::after {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 12px;
+      background-color: #fff;
+      margin-left: 10px;
+    }
+  }
+}
+&-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  &-t {
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    &-bar {
+      background-image: linear-gradient(
+        to right,
+        #409EFF,
+        #6acaef
+      );
+      height: 100%;
+      transition: all .3s;
+    }
+    &-tooltip{
+      transition: all .3s;
+    }
+    &-tooltip,
+    &-tooltipTemp {
+      position: absolute;
+      padding: 0 8px;
+      height: 24px;
+      line-height: 24px;
+      top: -35px;
+      text-align: center;
+      font-size: 14px;
+      color: #fff;
+      background-color: gray;
+      border-radius: 3px;
+      transform: translateX(-50%);
+      min-width: 20px;
+      white-space: nowrap;
+    }
+    &-tooltip::after,
+    &-tooltipTemp::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -8px;
+      border: 8px solid;
+      border-color: gray transparent transparent transparent;
+    }
+    &-tooltipTemp {
+      background-color: #ccc;
+    }
+    &-tooltipTemp::after {
+      border-color: #ccc transparent transparent transparent;
+    }
+    &-ul {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 1;
+      height: 100%;
+      li {
+        float: left;
+        border-left: 1px solid #999;
+        box-sizing: border-box;
+        height: 100%;
+      }
+    }
+    &-ul::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+  &-c {
+    height: 12px;
+    line-height: 12px;
+    &-ul {
+      height: 100%;
+      &-li {
+        float: left;
+        border-left: 1px solid #999;
+        border-bottom: 1px solid #999;
+        box-sizing: border-box;
+        position: relative;
+        height: 100%;
+        span {
+          position: absolute;
+          color: #fff;
+          font-size: 12px;
+          transform: translateX(-50%) scale(0.8);
+        }
+        span::after {
+          content: "";
+          position: absolute;
+          width: 1px;
+          top: -90%;
+          background-color: #fff;
+          height: 9px;
+          transform: translateX(-50%);
+          left: 50%;
+        }
+      }
+    }
+  }
+  &-b {
+    flex: 1;
+    &-ul {
+      height: 100%;
+      &-li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        float: left;
+        border-left: 1px solid #999;
+        color: #fff;
+        font-size: 12px;
+        box-sizing: border-box;
+        height: 100%;
+      }
+    }
+  }
+}
+&-right {
+  height: 100%;
+  width: 120px;
+  position: relative;
+  border-left: 1px solid #999;
+  &-now {
+    height: 28px;
+    line-height: 28px;
+    width: 80px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 14px;
+    background-color: #409EFF;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    cursor: pointer;
+  }
+  &-now:hover {
+    background-color: rgba(#409EFF, .8);
+  }
+}
+}
