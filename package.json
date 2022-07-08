@@ -1,6 +1,6 @@
 {
   "name": "@dinert/time-player",
-  "version": "1.0.3",
+  "version": "1.0.31",
   "description": "时间轴插件",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
@@ -34,5 +34,6 @@
     "time-player",
     "时间轴",
     "时间播放器"
-  ]
+  ],
+  "repository": "git@github.com:Dinert/time-player.git"
 }
