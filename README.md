@@ -83,7 +83,7 @@ yarn add @dinert/time-player
 | animate-after  | 当点击时间轴动画完成后触发 | Object |
 
 ## 创作不易😊，如果觉得好用的话，可以请作者喝杯咖啡😘
-![3f10f37bc8c52d85d11cc9298fb9242](https://user-images.githubusercontent.com/35824497/217978995-c5abeb58-4bb7-40bf-abbf-3f0c3b6d1b97.jpg)
-![94d31e86c72d9fe78d51b781061a6a6](https://user-images.githubusercontent.com/35824497/217979009-d6eacb3f-6e5e-43b5-87fa-2689f69d6785.jpg)
+<img src="https://user-images.githubusercontent.com/35824497/217978995-c5abeb58-4bb7-40bf-abbf-3f0c3b6d1b97.jpg" alt="支付宝" title="支付宝">
+<img src="https://user-images.githubusercontent.com/35824497/217979009-d6eacb3f-6e5e-43b5-87fa-2689f69d6785.jpg" alt="微信" title="微信">
 
 
